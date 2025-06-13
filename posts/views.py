@@ -17,3 +17,15 @@ def index(request):
 
 def about(request):
     return HttpResponse("HELLO")
+
+
+from datetime import datetime
+
+
+def index_use_template(requests):
+    now = datetime.now()
+    article_records = Post.objects.all()
+    list_data = ["1", "2", "3"]
+    # dict_data = {'key':1,'key':1,}
+    # return render(requests, "index.html", {'now':now})
+    return render(requests, "index.html", locals())
