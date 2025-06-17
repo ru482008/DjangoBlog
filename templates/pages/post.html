@@ -1,0 +1,11 @@
+{% extends "scaffolds/base.html" %} 
+{% block content %}
+
+<p class="post-title">{{article.title}}</p>
+<hr>
+{% load markdown_tag %}
+
+<p class="post-content">{{article.content | markdown | safe | linebreaks }}</p>
+<p class="post-date">{{article.pub_date}}</p>
+<a href="/"><h5>回首頁</h5></a>
+{% endblock %}
