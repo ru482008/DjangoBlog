@@ -55,7 +55,7 @@ ROOT_URLCONF = "DjangoBlog.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [ BASE_DIR / 'templates'],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -65,7 +65,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
             ],
             "libraries": {
-            "markdown_tag": "libraries.filter.markdown_filter",
+                "markdown_tag": "libraries.filter.markdown_filter",
             }
         },
         
