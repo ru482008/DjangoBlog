@@ -51,7 +51,7 @@ def run(**kwargs):
 
     target_url = parserTargetURL('board', **kwargs)
     res = requests.get(target_url)
-    html = BeautifulSoup(res.text)
+    html = BeautifulSoup(res.text, features="html.parser")
 
 
     article_title = html.find_all('div', class_='title')
@@ -65,7 +65,7 @@ def run(**kwargs):
 
             article_url = parserTargetURL('article', articleURL=temp_url)
             article_html = requests.get(article_url)
-            article_html = BeautifulSoup(article_html.text)
+            article_html = BeautifulSoup(article_html.text, features="html.parser")
 
 
             # 文章內容
