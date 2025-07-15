@@ -22,6 +22,7 @@ from posts.views import about
 from posts.views import index_use_template
 from posts.views import showPost
 from posts.views import login
+from line_bot.views import callback
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,4 +31,5 @@ urlpatterns = [
     path("about", about),
     path("post/<slug:slug>", showPost),
     path("login", login),
+    path('line/', callback),
 ]
