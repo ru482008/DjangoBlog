@@ -39,3 +39,9 @@ def showPost(requests, slug):
 
 def login(requests):
     return render(requests, "pages/login.html")
+
+from django.http import JsonResponse
+def showArticleList(requests):
+    article = Post.objects.all().values()
+    article = list(article)
+    return JsonResponse(article, safe=False)
